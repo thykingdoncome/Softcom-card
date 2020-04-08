@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4d799c321f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <title>SOFTCOM CARDS</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="card-holder">
+            <div class="card-top">
+                <div class="top-one">
+                    <span>POS FAILURE RATE</span>
+                    <div>
+                        <span><i id="toggleState" class="fas fa-th-list"></i></span>
+                        <span><i id="dark" class="fas fa-moon"></i></span>
+                        <span> <i id="light" class="fas fa-sun"></i></span>
+                    </div>
+                </div>
+
+                <div class="top-two">
+                    <span class="initial-figures">
+                        <span id="big-figure">12%</span>
+                        <span>
+                            <i class="fas fa-sort-down icon"></i>
+                            <i id="small-figure">14%</i>
+                        </span>
+                    </span>
+
+                    <!-- <span class="compact-figures">
+                        <span>60%</span>
+                        <span><i class="fas fa-sort-up"></i> 8%</span>
+                    </span> -->
+
+                    <span>
+                        <input type="range" name="" id="" min="0" max="100" value="50">
+                    </span>
+                </div>
+
+                <div class="top-three">
+                    <i class="fas fa-info-circle"></i>&nbsp; <span>Source</span><span id="nibbs">NIBBS</span>
+                </div>
+
+                <div class="line">
+                    <div class="compact-slider">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <span class="btn active">Daily</span>
+                <span class="btn">Monthly</span>
+                <span class="btn">Yearly</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="JS/script.js"></script>
+</body>
+
+</html>
