@@ -20,13 +20,22 @@ const toggleCard = () => {
     }
 }
 
+// Range Slider
+const sliderRange = () => {
+    let x = slider.value;
+    let bgColor = 'linear-gradient(90deg, rgb(40, 183, 89)' + x + '%,rgb(242, 242, 242)' + x + '%)'
+    slider.style.background = bgColor;
+}
+
 // Set Variables
 const lightMode = document.querySelector("#light");
 const darkMode = document.querySelector("#dark");
 const toggleState = document.querySelector("#toggleState");
 const container = document.querySelector(".card-holder");
+let slider = document.querySelector("#ranger");
 
 // Attach Click Event Listeners
 darkMode.addEventListener("click", setDarkMode);
 lightMode.addEventListener("click", setLightMode);
 toggleState.addEventListener("click", toggleCard);
+slider.addEventListener("mousemove", sliderRange);
