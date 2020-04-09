@@ -71,8 +71,11 @@ const toggleState = document.querySelector("#toggleState");
 const container = document.querySelector(".card-holder");
 let slider = document.querySelector("#ranger");
 
-// Attach Click Event Listeners
+// Attach Event Listeners
 darkMode.addEventListener("click", setDarkMode);
 lightMode.addEventListener("click", setLightMode);
 toggleState.addEventListener("click", toggleCard);
-slider.addEventListener("mousemove", sliderRange);
+// slider.addEventListener("mousemove", sliderRange);
+['mousemove','touchmove'].forEach( evt => 
+    slider.addEventListener(evt, sliderRange, false)
+);
