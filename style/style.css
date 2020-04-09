@@ -11,65 +11,6 @@
   src: url("../fonts/Avenir-Medium.ttf") format("truetype");
 }
 
-.top-two {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.top-two span:nth-of-type(1) span:nth-of-type(1) {
-  font-style: normal;
-  font-weight: 900;
-  font-size: 36px;
-  line-height: 49px;
-  margin-right: 10px;
-  color: #4F63FF;
-}
-
-.top-two span:nth-of-type(1) span:nth-of-type(2) {
-  font-size: 14px;
-  color: #28b759;
-  /* vertical-align: baseline; */
-}
-
-.top-two> span:last-of-type {
-  display: flex;
-  align-items: center;
-}
-
-.top-three {
-  padding-top: 8px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: baseline;
-  font-size: 8px;
-  color: #9ba1b5;
-  word-spacing: 5px;
-}
-
-#nibbs {
-  color: #666666;
-  padding-left: 2px;
-}
-
-.line {
-  width: 100%;
-  display: none;
-  padding: 1em 0 0;
-}
-
-.compact-slider {
-  width: 100%;
-  background: #F2F2F2;
-  border-radius: 2px;
-} 
-.compact-slider div:nth-of-type(1) {
-width: 209px;
-height: 5px;
-background: #FF005C;
-border-radius: 2px;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -100,12 +41,35 @@ border-radius: 2px;
   color: white;
 }
 
-.hide {
+.fa-sun {
   display: none;
 }
 
-.fa-sun {
-  display: none;
+.range-bar {
+  cursor: pointer;
+  position: relative;
+  width: 120px;
+  height: 4px;
+  background: #F2F2F2;
+  border-radius: 2px;
+}
+
+.range-tracker {
+  width: 50%;
+  height: 100%;
+  background: #28B759;
+  border-radius: 2px;
+}
+
+.range-thumb {
+  position: absolute;
+  top: -3px;
+  left: 48%;
+  width: 10px;
+  height: 10px;
+  background: #FFFFFF;
+  border-radius: 100%;
+  border: 3px solid #35BB63;
 }
 
 .bottom {
@@ -147,7 +111,7 @@ border-radius: 2px;
   border-right: 0.2px solid #9ba1b5;
 }
 
-/* DARK MODE */ 
+/* DARK MODE */
 .dark-mode {
   background: #27292d;
 }
@@ -179,13 +143,14 @@ border-radius: 2px;
 .dark-mode #nibbs {
   color: #ffffff;
 }
+
+.dark-mode .compact-slider {
+  background: #383b40;
+}
 /* --------------
 Dark mode end 
 ----- ---------*/
 
-/* -------------
-Card Top 
----------------*/
 .card-top {
   padding: 20px;
 }
@@ -219,32 +184,51 @@ Card Top
   margin-right: 13.68px;
 }
 
-.full-mode .top-two {
+.top-two {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.full-mode .top-two span:nth-of-type(1) span:nth-of-type(1) {
+.sixty,
+.twelve {
   font-style: normal;
   font-weight: 900;
   font-size: 36px;
   line-height: 49px;
   margin-right: 10px;
-  color: #4F63FF;
+  color: #4f63ff;
+  font-family: "Avenir Black", sans-serif;
 }
 
-.full-mode .top-two span:nth-of-type(1) span:nth-of-type(2) {
+.sixty {
+  display: none;
+}
+
+.fourteen,
+.fa-sort-down {
   font-size: 14px;
   color: #28b759;
 }
 
-.full-mode .top-two> span:last-of-type {
+.eight,
+.fa-sort-up {
+  display: none;
+  font-size: 14px;
+  color: #ff005c;
+}
+
+.fa-sort-up {
+  position: relative;
+  top: 2px;
+}
+
+.top-two > span:last-of-type {
   display: flex;
   align-items: center;
 }
 
-.full-mode .top-three {
+.top-three {
   padding-top: 8px;
   display: flex;
   justify-content: flex-end;
@@ -254,9 +238,41 @@ Card Top
   word-spacing: 5px;
 }
 
-.full-mode #nibbs {
+#nibbs {
   color: #666666;
   padding-left: 2px;
+}
+
+.line {
+  width: 100%;
+  display: none;
+  padding: 0 5px 5px;
+}
+
+.compact-slider {
+  width: 100%;
+  background: #f2f2f2;
+  border-radius: 2px;
+}
+
+.compact-slider div:nth-of-type(1) {
+  width: 209px;
+  height: 5px;
+  background: #ff005c;
+  border-radius: 2px;
+}
+
+/* FULL MODE */
+.full-mode .top-two {
+  display: flex;
+}
+
+.full-mode .top-two > span:last-of-type {
+  display: flex;
+}
+
+.full-mode .top-three {
+  display: flex;
 }
 
 .full-mode .bottom {
@@ -267,10 +283,29 @@ Card Top
   display: none;
 }
 
-.full-mode .icon {
-  position: relative;
-  bottom: 1px;
+.full-mode.dark-mode #nibbs {
+  color: #ffffff;
 }
+
+.full-mode .twelve {
+  display: inline;
+}
+
+.full-mode .fourteen,
+.full-mode .fa-sort-down {
+  display: inline;
+}
+
+.full-mode .sixty {
+  display: none;
+}
+
+.full-mode .eight,
+.full-mode .fa-sort-up {
+  display: none;
+}
+
+/* COMPACT MODE */
 .compact-mode .bottom {
   display: none;
 }
@@ -279,10 +314,7 @@ Card Top
   display: none;
 }
 
-.mini-mode .card-top {
-  padding-bottom: 5px;
-}
-
+/* MINIMIZED MODE */
 .mini-mode .bottom {
   display: none;
 }
@@ -291,7 +323,7 @@ Card Top
   display: none;
 }
 
-.mini-mode .top-two> span:last-of-type {
+.mini-mode .top-two > span:last-of-type {
   display: none;
 }
 
@@ -299,96 +331,20 @@ Card Top
   display: block;
 }
 
-.mini-mode  .top-two span:nth-of-type(1) span:nth-of-type(2) {
-  color: #FF005C;
+.mini-mode .twelve {
+  display: none;
 }
 
-.mini-mode  .icon {
-  position: relative;
-  top: 2px;
+.mini-mode .fourteen,
+.mini-mode .fa-sort-down {
+  display: none;
 }
 
-/* 
-.top-two {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.mini-mode .sixty {
+  display: inline;
 }
 
- .top-two span:nth-of-type(1) span:nth-of-type(1) {
-  font-style: normal;
-  font-weight: 900;
-  font-size: 36px;
-  line-height: 49px;
-  margin-right: 10px;
-  color: #4F63FF;
-}
-
-.top-two span:nth-of-type(1) span:nth-of-type(2) {
-  font-size: 14px;
-  color: #28b759;
-}
-
-.top-two> span:last-of-type {
-  display: flex;
-  align-items: center;
-}
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-input[type="range"]::-webkit-slider-runnable-track {
-  width: 120px;
-  height: 4px;
-  cursor: pointer;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: #35bb63;
-  border-radius: 1.3px;
-  border: 0.2px solid #010101;
-}
-input[type="range"]::-webkit-slider-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #000000;
-  height: 10px;
-  width: 10px;
-  border-radius: 100%;
-  background: #ffffff;
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -3px;
-}
-
-input[type="range"] {
-  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-  width: 100%; /* Specific width is required for Firefox. */
-  background: transparent; /* Otherwise white in Chrome */
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-}
-
-input[type="range"]:focus {
-  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
-}
-
-input[type="range"]::-ms-track {
-  width: 100%;
-  cursor: pointer;
-
-  /* Hides the slider so custom styles can be added */
-  background: transparent;
-  border-color: transparent;
-  color: transparent;
+.mini-mode .eight,
+.mini-mode .fa-sort-up {
+  display: inline;
 }
